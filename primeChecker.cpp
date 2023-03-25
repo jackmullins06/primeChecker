@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 int promptForInput() {
     int target;
@@ -11,7 +12,7 @@ int promptForInput() {
 
 void checkForPrimes(int input) {
     bool is_prime = true;
-    for(int i = 2; i < input; i++) {
+    for(int i = 2; i <= std::sqrt(input); i++) {
         if(input % i == 0) {
             is_prime = false;
             break;
@@ -23,7 +24,6 @@ void checkForPrimes(int input) {
         std::cout << input << " is not a prime number!" << std::endl;
     }
 }
-
 
 int main() {
     int input = promptForInput();
